@@ -1,0 +1,57 @@
+<form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-white text-center">Create Coupon</h1>
+
+        <hr />
+        <div class="row">
+            <div class="col-2">
+                <label  class="control-label pt-2" style="font-size:20px;">Coupon Code</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input  class="form-control" formControlName="couponCode"/>
+                @if(createForm.controls.couponCode.errors) 
+                {
+                    <em>
+                        Coupon code amount should be a valid word
+                    </em>
+                }
+            </div>
+            <div class="col-2">
+                <label  class="control-label pt-2" style="font-size:20px;">Discount Amount</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input class="form-control" formControlName="discount"/>
+                @if(createForm.controls.discount.errors) 
+                {
+                    <em>
+                        Discout amount should be a valid number
+                    </em>
+                }
+            </div>
+            <div class="col-2">
+                <label  class="control-label pt-2" style="font-size:20px;">Minimum Amount</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input class="form-control" formControlName="minimum"/>
+                @if(createForm.controls.minimum.errors) 
+                {
+                    <em>
+                        Minimum amount should be a valid number
+                    </em>
+                }
+            </div>
+            
+            <div class="col-5 offset-2">
+                <button type="button" class="btn-primary btn form-control" (click)="activeModal.close('Close click')">Back to List</button>
+            </div>
+            <div class="col-5">
+                <input type="submit" value="Create" class="btn btn-success form-control" />
+            </div>
+
+        </div>
+
+        <div>
+        </div>
+    </div>
+</form>
